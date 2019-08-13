@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:controller="controller.MailController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <SplitPane layoutX="-1.0" layoutY="48.0" prefHeight="353.0" prefWidth="600.0">
+         <items>
+            <TabPane tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="wirter_letters" text="                                   写信                                     ">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <GridPane layoutY="1.0" prefHeight="264.0" prefWidth="583.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="293.4" minWidth="10.0" prefWidth="123.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="475.0" minWidth="10.0" prefWidth="475.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="102.6" minHeight="9.8" prefHeight="33.19999389648437" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="205.0" minHeight="10.0" prefHeight="50.8" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="247.6" minHeight="10.0" prefHeight="205.2" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="接收方" GridPane.halignment="CENTER">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label text="主题" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <Label contentDisplay="CENTER" text="内容" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="receiver" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                                    <TextField fx:id="send_subject" prefWidth="467.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                    <TextArea fx:id="send_content" maxHeight="-Infinity" prefHeight="184.0" prefWidth="467.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                 </children>
+                              </GridPane>
+                              <Button fx:id="sendMail" layoutX="455.0" layoutY="272.0" mnemonicParsing="false" onAction="#sendMail" prefWidth="100.0" text="发送">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                <Tab fx:id="mails_box" onSelectionChanged="#getMails" text="                                  收件箱                                  ">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TabPane fx:id="mailBox" prefHeight="288.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+                                <tabs>
+                                 
+                                </tabs>
+                              </TabPane>
+                             
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </items>
+      </SplitPane>
+      <Label layoutX="239.0" layoutY="14.0" text="邮件客户端">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
